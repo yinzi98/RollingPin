@@ -116,6 +116,10 @@ bison --yacc -dv mycalc.y
 flex mycalc.l
 gcc -o mycalc y.tab.c lex.yy.c
 ```
+or
+```bash
+sh giao.sh
+```
 
 ## Part Ⅱ
 一个简单的玩具语言 
