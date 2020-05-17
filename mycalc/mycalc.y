@@ -8,7 +8,7 @@
     double       double_value;
 }
 %token <double_value>      DOUBLE_LITERAL
-%token ADD SUB MUL DIV CR
+%token ADD SUB MUL DIV CR LP RP
 %type <double_value> expression term primary_expression
 %%
 line_list
@@ -44,18 +44,19 @@ term
     ;
 primary_expression
     : DOUBLE_LITERAL
+    | LP expression RP
+    {
+        $$ = $2;    
+    }
     ;                 
 %%
-int
-yyerror(char const *str)
-{
+int yyerror(char const *str) {
     extern char *yytext;
     fprintf(stderr, "parser error near %s\n", yytext);
     return 0;
 }
 
-int main(void)
-{
+int main(void) {
     extern int yyparse(void);
     extern FILE *yyin;
 

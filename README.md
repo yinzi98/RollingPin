@@ -46,7 +46,7 @@ token其实是一个总称、包含三部分，分别是
 
 
 ## Part Ⅰ
-一个简单的计算器 mycalc
+一个简单的计算器 mycalc，用来入门Flex和Bison。
 
 ### Flex 
 执行词法分析的程序称为词法分析器(lexical analyzer)，flex的工作就是根据词法规则自动生成词法分析器，通过输入扩展名为.l的文件，输出词法分析器的 C 语言代码。
@@ -80,6 +80,8 @@ int yywrap(void) {
 "*"             return MUL;
 "/"             return DIV;
 "\n"            return CR;
+"("             return LP;
+")"             return RP;
 ([1-9][0-9]*)|0|([0-9]+\.[0-9]*) {
     double temp;
     sscanf(yytext, "%lf", &temp);
@@ -104,8 +106,8 @@ int yywrap(void) {
 ### Bison
 执行语法分析的程序称为解析器(parser)，bison就是能根据语法规则自动生成解析器的程序，输入扩展名为.y的文件，就会输出解析器的 C 语言代码。
 
-**TO BE CONTINUED**
-
+**On the way**
+写文档比写代码难多了qwq
 
 
 ### 生成执行文件
@@ -115,6 +117,5 @@ flex mycalc.l
 gcc -o mycalc y.tab.c lex.yy.c
 ```
 
-
 ## Part Ⅱ
-一个简单的玩具语言
+一个简单的玩具语言 
