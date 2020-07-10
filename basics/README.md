@@ -3,6 +3,18 @@
 ## Part Ⅰ
 一个简单的计算器 mycalc，用来入门Flex和Bison。
 
+**环境同主项目一致**
+### 生成执行文件
+```bash
+bison --yacc -dv mycalc.y
+flex mycalc.l
+gcc -o mycalc y.tab.c lex.yy.c
+```
+or
+```bash
+sh giao.sh
+```
+
 ### token 
 token其实是一个总称、包含三部分，分别是
 1. **token的种类**
