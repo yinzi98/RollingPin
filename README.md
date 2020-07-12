@@ -1,5 +1,5 @@
 # RollingPin
-> #### 一种弱类型动态编程语言的实现
+> #### 一种弱类型动态编程语言的实现 (toy-like programming language)
 
 ## 环境准备
 由于开发阶段依赖更新比较频繁，建议使用Docker + VSCode的组合开发/体验。
@@ -29,6 +29,19 @@ git clone https://github.com/yinzi98/RollingPin.git
 cd RollingPin
 ```
 **未完待续...**
+
+## 语法设计
+### 关键字
+RolllingPin 关键字包含以下单词，不能作为变量名或函数使用
+```
+for while break continue if elif else 
+func return true false
+```
+
+### 标识符
+RolllingPin 采用类 C 表示符规则
+- 以英文字母（A~Z，a~z）或者是下划线开头
+- 除标识符首位，其他字符可以使英文字母、下划线或者数字（0~9）
 
 ## FAQ
 #### 为什么会有这个项目 ？
